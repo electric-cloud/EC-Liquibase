@@ -1,0 +1,14 @@
+<plugin>
+  <key>EC-Liquibase</key>
+  <label>EC-Liquibase</label>
+  <version>1.0.0</version>
+  <author>L. Rochette</author>
+  <authorUrl>mailto:"lrochette@electric-cloud.com"</authorUrl>
+  <category>Database</category>
+  <commander-version min="6.0" />
+  <configure>ec_config</configure>
+  <description>ElectricFlow integration for Liquibase</description>
+  <pluginWizardBased>true</pluginWizardBased>
+  <depends min="1.4.=0">EC-PluginManager</depends>
+  <help>help.xml</help>
+</plugin>
