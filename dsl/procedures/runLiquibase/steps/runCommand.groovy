@@ -35,6 +35,7 @@ def configName = '$[config]'
 def liquibaseLocation='$[liquibaseLocation]'
 def changelog='$[changelog]'
 def liquibaseCommand='$[liquibaseCommand]'
+def options='$[options]'
 
 ElectricFlow ef = new ElectricFlow()
 
@@ -63,11 +64,14 @@ String username=cred.credential.userName;
 String password=cred.credential.password;
 
 command=liquibaseLocation ;
+if (options) {
+  command += " $options";
+}
 if (driver) {
   command += " --driver=$driver";
 }
 command += " --changeLogFile=$changelog";
-command += " --url=\"$dbUrl\"";
+command += " --url=$dbUrl";
 command += " --username=$username";
 command += " --password=$password";
 command += " $liquibaseCommand";
@@ -77,4 +81,4 @@ println "Executing: $commandToDisplay"
 
 def proc = command.execute()
 proc.waitForProcessOutput(System.out, System.err);
-//return proc.exitValue()
+return proc.exitValue()

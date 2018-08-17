@@ -33,6 +33,7 @@ my $configName = '$[config]';
 my $liquibaseLocation='$[liquibaseLocation]';
 my $changelog='$[changelog]';
 my $liquibaseCommand='$[liquibaseCommand]';
+my $options='$[options]';
 
 #
 # Global variables
@@ -52,6 +53,9 @@ my $username=$json->{responses}->[0]->{credential}->{userName};
 my $password=$json->{responses}->[0]->{credential}->{password};
 
 $command=$liquibaseLocation ;
+if ($options ne "") {
+  $command .= " $options";
+}
 if ($driver ne "") {
   $command .= " --driver=$driver";
 }
@@ -65,6 +69,6 @@ my $commandToDisplay=$command;
 $commandToDisplay =~ s/password=[^ ]*/password=****/;
 printf("Executing: %s\n", $commandToDisplay);
 
-system($command);
-
+my $ret=system($command);
+exit($ret);
 $[/plugins/EC-Admin/project/scripts/perlLibJSON]

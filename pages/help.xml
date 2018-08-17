@@ -1,13 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta content="text/html; charset=us-ascii" http-equiv="content-type"/>
-        <title>MyPlugin</title>
-    </head>
-    <body>
-        <div class="help">
-            <h1>MyPlugin</h1>
-			<h3>Overview</h3>
-			<p></p>
-		</div>
-	</body>
-</html>	
+<head>
+  <meta content="text/html; charset=us-ascii" http-equiv="content-type" />
+  <title>@PLUGIN_KEY@ Plugin</title>
+  <link rel="stylesheet" href= "../../plugins/@PLUGIN_KEY@/pluginhelp.css" type="text/css" media= "screen" />
+</head>
+
+<body>
+<div class="help">
+  <h1>@PLUGIN_KEY@</h1>
+  <p>Plugin Version @PLUGIN_VERSION@</p>
+  <hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
+
+  <p>Liquibase is an open source tool to manage database changes. You can find
+    more information at
+    <a href="https://www.liquibase.org/">https://www.liquibase.org/</a>.</p>
+
+  <h2>ElectricFlow Integration to Liquibase</h2>
+
+  <p>The plugin interacts with the Liquibase command-line tool
+    (liquibase).</p>
+
+  <h2>Integrated Version</h2>
+
+  <p>This plugin was developed and tested against version 3.6.2.</p>
+
+  <h1>Plugin Procedures</h1>
+  <p>IMPORTANT: For all of the following parameter descriptions, the required
+    parameters are in <span class="required">bold
+    italics</span>.</p>
+
+    <div id="CreateConfiguration"><a name="CreateConfiguration" id="CreateConfiguration"></a>
+
+    <h2>Plugin Configuration</h2>
+
+    <p>Plugin configurations are sets of parameters that apply
+        across some or all of the plugin procedures. They are
+        intended to reduce repetition of common values, create
+        predefined sets of parameters for end users, and to
+        securely store credentials where needed. Each configuration
+        is given a unique name that is entered in designated
+        parameters on the procedures that use them.<br />
+        Plugin configurations are created in ElectricFlow by going to
+        the "Administration" tab and then to the "Plugins"
+        subtab. The "Configure" link is on the right side of the row for the
+        specific plugin, which will open the Configuration page.
+    </p>
+    <table class="grid">
+      <thead>
+        <tr><th>Parameter</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="required">Configuration Name</td>
+          <td>Provide a unique name for the configuration.(Required)</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>Provide a meaningful description for your configuration.</td>
+        </tr>
+        <tr>
+          <td class="required">Database Driver</td>
+          <td>Driver string based on the type of database to which you want to
+            connect.(Required)</td>
+        </tr>
+        <tr>
+          <td class="required">Database string</td>
+          <td>The jdbc string to open a connection to your database.(Required)</td>
+        </tr>
+        <tr>
+          <td class="required">User Name</td>
+          <td>Provide the user login ID. Login IDs are case sensitive. (Required)</td>
+        </tr>
+        <tr>
+          <td class="required">Password</td>
+          <td>Provide the user-specified password. (Required)</td>
+        </tr>
+      </tbody>
+  </table>
+  <img src="../../plugins/@PLUGIN_KEY@/images/createConfiguration.png" alt="form" /></div>
+
+  <div id="runLiquibase"><a name="runLiquibase" id="runLiquibase"></a>
+
+  <h2>runLiquibase Configuration</h2>
+  <p>This is the generic liquibase wrapper for the command line tool. The format
+    of the command passed is as follow:<br />
+    liquibase [options] --driver DRIVER --changeLogFile FILE --username USER --password PASS COMMAND_and_PARAMS'</p>
+  <table class="grid">
+    <thead>
+      <tr><th>Parameter</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="required">Configuration Name</td>
+        <td>The name of the configuration that contains the information to
+          connect to the database server. (Required)</td>
+      </tr>
+      <tr>
+        <td class="required">Liquibase location</td>
+        <td>Path to the liquibase command-line tool. Path must be abosulte if the
+          tool is not in the agent user PATH (Required)</td>
+      </tr>
+      <tr>
+        <td>Options</td>
+        <td>Additional options to pass in front of the command.</td>
+      </tr>
+      <tr>
+        <td class="required">Changelog location</td>
+        <td>Absolute path to the changelog.xml file containing the changesets.
+           Relative path is calculated from the job workspace. (Required)</td>
+      </tr>
+      <tr>
+        <td class="required">Liquibase command</td>
+        <td>Command to run followed by its parameters. (Required)</td>
+      </tr>
+    </tbody>
+  </table>
+  <img src="../../plugins/@PLUGIN_KEY@/images/runLiquibase.png" alt="form" /></div>
+
+  <h1>Release Notes</h1>
+  <h2>@PLUGIN_KEY@ 1.0.0 </h2>
+  <ul>
+      <li>Initial version.</li>
+  </ul>
+
+  <h1>Contact authors</h1>
+  <ul>
+    <li>Laurent Rochette (<a href="mailto:lrochette@electric-cloud.com">lrochette@electric-cloud.com</a>)</li>
+  </ul>
+
+  <h1>Legal Jumbo</h1>
+
+  <p>This module is free for use. Modify it however you see fit to better your
+  experience using ElectricCommander. Share your enhancements and fixes.</p>
+
+  <p>This module is not officially supported by Electric Cloud. It has undergone no
+  formal testing and you may run into issues that have not been uncovered in the
+  limited manual testing done so far.</p>
+
+  <p>Electric Cloud should not be held liable for any repercussions of using this
+  software.</p>
+</div>
+</body>
+</html>

@@ -14,7 +14,7 @@ my $ec = new ElectricCommander->new();
 
 my $epb="../ecpluginbuilder";
 
-my $pluginVersion = "0.1.0";
+my $pluginVersion = "1.0.1";
 my $pluginKey = "EC-Liquibase";
 
 GetOptions ("version=s" => \$pluginVersion)

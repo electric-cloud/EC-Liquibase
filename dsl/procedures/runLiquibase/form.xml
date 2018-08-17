@@ -35,6 +35,14 @@
   </formElement>
   <formElement>
     <type>entry</type>
+    <label>Options</label>
+    <property>options</property>
+    <required>0</required>
+    <documentation>Liquibase options. They will be inserted before the command.</documentation>
+    <value></value>
+  </formElement>
+  <formElement>
+    <type>entry</type>
     <label>Changelog Location</label>
     <property>changelog</property>
     <required>1</required>

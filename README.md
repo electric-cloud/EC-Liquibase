@@ -1,2 +1,23 @@
 # EC-Liquibase
-ElectricFlow integration for Liquibase
+==============
+
+The ElectricFlow integration with Liquibase
+
+#### Prerequisite installation: ####
+
+1. EC-Admin is required
+
+## Installation
+
+`ectool installPlugin EC-Liquibase.jar`
+
+#### Prerequisite build: ####
+
+1. install and compile ecpluginbuilder
+2. the system expect it in the directory above your repository
+
+## Build ##
+1. `ec-perl ecpluginbuilder.pl`
+
+This will create a new version of the EC-Liquibase.jar and then install and
+promote it to the ElectricFlow server you are currently logged in.

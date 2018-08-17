@@ -27,11 +27,14 @@ import java.io.File
 def procName = 'runLiquibase'
 procedure procName, {
 
-	step 'runCommand',
+/*	step 'runCommand',
     	  command: new File(pluginDir, "dsl/procedures/$procName/steps/runCommand.groovy").text,
     	  shell: 'ec-groovy'
-  step 'runCommand-perl',
+        postProcessor: 'postp --loadProperty /myProject/postp_matchers'
+*/
+  step 'runCommand',
     	  command: new File(pluginDir, "dsl/procedures/$procName/steps/runCommand.pl").text,
-    	  shell: 'ec-perl'
+    	  shell: 'ec-perl',
+        postProcessor: 'postp --loadProperty /myProject/postp_matchers'
+
 }
-// attachParameter projectName: '/my', procedureName: procName, stepName: 'runCommand', formalParameterName: 'creds'

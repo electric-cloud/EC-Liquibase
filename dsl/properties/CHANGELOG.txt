@@ -1,0 +1,11 @@
+2018-08-17 Laurent Rochette <lrochette@electric-cloud.com>
+  * 1.0.1:
+    + Add postp to work around Liquibase bug CORE-3302
+    + Add options Parameters
+  * 1.0.0: First release including
+    - runLiquibase procedure
+    - Configuration management
+    - Help page
+
+2018-08-15 Laurent Rochette <lrochette@electric-cloud.com>
+  * 0.1.0: Start of the project

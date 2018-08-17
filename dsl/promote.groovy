@@ -18,11 +18,7 @@ def stepsWithAttachedCredentials = [
 		[
 			procedureName: 'runLiquibase',
 			stepName: 'runCommand'
-		 ],
-		 [
- 			procedureName: 'runLiquibase',
- 			stepName: 'runCommand-perl'
- 		 ]
+		 ]
 	]
 // ** end steps with attached credentials
 
