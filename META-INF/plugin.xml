@@ -9,6 +9,7 @@
   <configure>ec_config</configure>
   <description>ElectricFlow integration for Liquibase</description>
   <pluginWizardBased>true</pluginWizardBased>
-  <depends min="1.4.=0">EC-PluginManager</depends>
+  <depends min="1.4.0">EC-PluginManager</depends>
+  <depends min="3.0.0">EC-Admin</depends>
   <help>help.xml</help>
 </plugin>
