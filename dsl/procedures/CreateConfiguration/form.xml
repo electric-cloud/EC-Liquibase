@@ -37,6 +37,7 @@
         <required>1</required>
         <option><name>mysql</name><value>com.mysql.jdbc.Driver</value></option>
         <option><name>Oracle</name><value>oracle.jdbc.OracleDriver</value></option>
+        <option><name>Postgres</name><value>org.postgres.Driver</value></option>
         <value>com.mysql.jdbc.Driver</value>
         <documentation>Driver to use for the Database.</documentation>
     </formElement>
